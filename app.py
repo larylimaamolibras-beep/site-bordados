@@ -5,18 +5,46 @@ import os
 # --- 1. CONFIGURAÇÃO DA PÁGINA ---
 st.set_page_config(page_title="Flávia Confecção", page_icon="🪡", layout="wide")
 
-# --- 2. ESTILO CSS PARA O FUNDO ---
+# --- 2. ESTILO CSS ATUALIZADO ---
 st.markdown("""
 <style>
+/* 1. FUNDO GERAL BRANCO (Lado da Vitrine) */
 [data-testid="stAppViewContainer"] {
-    background-image: url("https://images.unsplash.com/photo-1518386348616-e5559f0f9b3b?q=80&w=2000&auto=format&fit=crop");
-    background-size: cover; background-position: center; background-attachment: fixed;
-    background-color: rgba(255, 255, 255, 0.85); background-blend-mode: overlay;
+    background-color: #FFFFFF !important;
+    background-image: none !important;
 }
-.main .block-container { background-color: rgba(255, 255, 255, 0.95); border-radius: 20px; padding: 30px; box-shadow: 0px 4px 15px rgba(0,0,0,0.05); }
+
+/* 2. TEXTOS DA VITRINE EM PRETO (Para ler no fundo branco) */
+.main .block-container, .stMarkdown p, h1, h2, h3, span {
+    color: #000000 !important;
+}
+
+/* 3. BARRA LATERAL BRANCA (Onde fica o Logo) */
+[data-testid="stSidebar"] {
+    background-color: #FFFFFF !important;
+}
+
+/* 4. CAIXA DE OPÇÕES VERDE CLARINHO (Lado de cá) */
+div[data-testid="stRadio"] {
+    background-color: #90EE90 !important; /* Verde clarinho */
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* 5. FONTE PRETA DENTRO DO VERDE (Para melhorar a visão) */
+div[data-testid="stRadio"] label, 
+div[data-testid="stRadio"] p, 
+div[data-testid="stRadio"] span {
+    color: #000000 !important; /* Fonte preta */
+    font-weight: 600 !important;
+}
+
+/* Ajuste das linhas dos Expanders para ficarem visíveis no branco */
+.st-emotion-cache-p4m0d5 {
+    border: 1px solid #dddddd !important;
+}
 </style>
 """, unsafe_allow_html=True)
-
 # --- 3. LÓGICA DE NAVEGAÇÃO ---
 if "aba_home" not in st.session_state:
     st.session_state.aba_home = "Vitrine de Amostras"
