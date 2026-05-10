@@ -5,43 +5,43 @@ import os
 # --- 1. CONFIGURAÇÃO DA PÁGINA ---
 st.set_page_config(page_title="Flávia Confecção", page_icon="🪡", layout="wide")
 
-# --- 2. ESTILO CSS ATUALIZADO ---
+# --- 2. ESTILO CSS ATUALIZADO (AVISO AMARELO ESCURO) ---
 st.markdown("""
 <style>
-/* 1. FUNDO GERAL BRANCO (Lado da Vitrine) */
+/* 1. FUNDO GERAL VERDE CLARINHO */
 [data-testid="stAppViewContainer"] {
-    background-color: #FFFFFF !important;
-    background-image: none !important;
+    background-color: #C1F0C1 !important;
 }
 
-/* 2. TEXTOS DA VITRINE EM PRETO (Para ler no fundo branco) */
-.main .block-container, .stMarkdown p, h1, h2, h3, span {
-    color: #000000 !important;
-}
-
-/* 3. BARRA LATERAL BRANCA (Onde fica o Logo) */
+/* 2. BARRA LATERAL BRANCA */
 [data-testid="stSidebar"] {
     background-color: #FFFFFF !important;
 }
 
-/* 4. CAIXA DE OPÇÕES VERDE CLARINHO (Lado de cá) */
-div[data-testid="stRadio"] {
-    background-color: #90EE90 !important; /* Verde clarinho */
-    padding: 20px;
-    border-radius: 15px;
+/* 3. CAIXA DE AVISO AMARELO ESCURO (O que faltou!) */
+[data-testid="stNotification"] {
+    background-color: #FFD700 !important; /* Amarelo Ouro bem vivo */
+    color: #000000 !important; /* Letra preta */
+    border: 2px solid #B8860B !important; /* Borda dourada escura para destacar */
 }
 
-/* 5. FONTE PRETA DENTRO DO VERDE (Para melhorar a visão) */
-div[data-testid="stRadio"] label, 
-div[data-testid="stRadio"] p, 
-div[data-testid="stRadio"] span {
-    color: #000000 !important; /* Fonte preta */
+/* 4. EXPANDERS (AMOSTRAS) EM BRANCO */
+.stExpander {
+    background-color: #FFFFFF !important;
+    border: 1px solid #000000 !important;
+}
+
+/* 5. FONTES GERAIS EM PRETO */
+h1, h2, h3, p, span, label {
+    color: #000000 !important;
     font-weight: 600 !important;
 }
 
-/* Ajuste das linhas dos Expanders para ficarem visíveis no branco */
-.st-emotion-cache-p4m0d5 {
-    border: 1px solid #dddddd !important;
+/* 6. CAIXA DE NAVEGAÇÃO NA LATERAL */
+div[data-testid="stRadio"] {
+    background-color: #C1F0C1 !important;
+    padding: 15px;
+    border-radius: 10px;
 }
 </style>
 """, unsafe_allow_html=True)
